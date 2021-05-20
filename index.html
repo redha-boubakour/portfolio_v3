@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+        rel="stylesheet"
+    />
+    <title>MR BOUBAKOUR | Portfolio</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav">
+            <img
+                src="img/red_logo.png"
+                alt="red logo"
+                class="nav__logo"
+                id="logo"
+            />
+            <ul class="nav__links">
+                <li class="nav__item">
+                    <a class="nav__link" href="#header">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#section--1">Projects</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#section--2">My journey</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--btn" href="#contact">Let's connect</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header__title">
+            <h1 class="header__main__text">
+                Hey ! My name is
+                <span class="highlight">Mohamed</span>
+                <span class="highlight">Rédha</span>
+                <span class="highlight">BOUBAKOUR</span>
+                and sooner or later, i will become a 
+                <span class="highlight">web</span>
+                <span class="highlight">developper</span>
+            </h1>
+            <div class="header__second__text">
+                <h4>
+                    This is my Portfolio. Through it, you will understand exactly from where i started.<br>
+                    "A long journey" they said... They were probably right. <br><br>
+                </h4>
+                <button class="btn--text btn--scroll-to">My achievements ? &DownArrow;</button>
+            </div>
+            <img
+                class="header__img__text"
+                src="img/hero.png"
+                class="header__img"
+                alt="red profile image"
+            />
+        </div>
+    </header>
+
+    <section class="section" id="section--1">
+        <div class="section__title section__title--projects">
+            <h2 class="section__description">Projects</h2>
+            <h3 class="section__header">
+                Here's some of the latest projects i worked on.
+            </h3>
+        </div>
+  
+        <div class="slider">
+          <div class="slide slide--1">
+                <div class="project">
+                <h5 class="project__header">La Boutique</h5>
+                    <blockquote class="project__text">
+                        I consider this project as the first one in which i really had a really rough time. (I agree.. still not that impressive tho.. we'll get there)
+                        Nevertheless ! I learned a lot of things such as : the MVC, the basics of the framework Symfony, Communicating with APIs, etc.
+                    </blockquote>
+                    <address class="project__author">
+                        <img src="img/user-1.jpg" alt="" class="project__image" />
+                        <h6 class="project__source">Udemy</h6>
+                        <p class="project__tech">PHP / Symfony / API / Twig / Bootstrap</p>
+                    </address>
+                </div>
+        </div>
+  
+        <div class="slide slide--2">
+            <div class="project">
+                <h5 class="project__header">
+                    Le Blog
+                </h5>
+                <blockquote class="project__text">
+                    The main purpose of this project was to learn the basics of the "oriented object approach". This was the last step before the "Symfony" challenge !
+                </blockquote>
+                <address class="project__author">
+                    <img src="img/user-2.jpg" alt="" class="project__image" />
+                    <h6 class="project__source">CodeDeDev</h6>
+                    <p class="project__tech">Oriented object PHP / Mysql / Bootstrap</p>
+                </address>
+            </div>
+        </div>
+  
+        <div class="slide slide--3">
+            <div class="project">
+                <h5 class="project__header">
+                    Les Projos
+                </h5>
+                <blockquote class="project__text">
+                    After the creation of an organisation located in Lille (France) by some friends, they asked me if i can make a simple website for them soo they can promote their work. As you can see, job's done. ("Simple" being the key word here)
+                </blockquote>
+                <address class="project__author">
+                    <img src="img/user-3.jpg" alt="" class="project__image" />
+                    <h6 class="project__source">Volunteering</h6>
+                    <p class="project__tech">Wordpress</p>
+                </address>
+        </div>
+
+        <button class="slider__btn slider__btn--left">&larr;</button>
+        <button class="slider__btn slider__btn--right">&rarr;</button>
+        <div class="dots"></div>
+    </section>
+
+    <section class="section" id="section--2">
+        <div class="section__title section__title--journey">
+            <h2 class="section__description">My journey</h2>
+            <h3 class="section__header">
+                Purely intended as a reminder of my adventure. A resume if you will.
+            </h3>
+        </div>    
+    </section>
+
+    <section class="section section--contact" id="contact">
+        <div class="section__title">
+            <h2 class="section__description">Contact</h2>
+            <h3 class="section__header">
+                Wanna know more about me ? Here we go!
+            </h3>
+        </div>
+        <button class="btn btn--show-modal">let's connect !</button>
+    </section>
+
+    <footer class="footer">
+        <ul class="footer__nav">
+            <li class="footer__item">
+                <a class="footer__link" href="#">Legal Notice</a>
+            </li>
+        </ul>
+        <p class="footer__copyright">
+            Mohamed Rédha BOUBAKOUR | Portfolio &copy; 2021
+        </p>
+    </footer>
+</body>
+</html>
