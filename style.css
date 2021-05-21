@@ -2,7 +2,7 @@
 
 A faire :
 
-Retour automatique vers le "contactez nous" if !hover
+
 Sticky nav bar
 Caroussel sur les projets
 Smooth scroll effect : section by section
@@ -25,6 +25,14 @@ body {
   font-family: 'Roboto', sans-serif;
   color: rgb(70, 68, 68);
   background-color: #f3f3f3;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h4 {
+  font-size: 18px;
 }
 
 .section {
@@ -65,12 +73,13 @@ body {
 .btn--text {
   display: inline-block;
   background: none;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   color: #FB4949;
   border: none;
   border-bottom: 1px solid currentColor;
   cursor: pointer;
+  margin: 10px 0;
 }
 
 p {
@@ -78,57 +87,63 @@ p {
 }
 
 /* NAVIGATION */
-.nav {
+.nav {  
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 12vh;
+  height: 9vh;
   width: 100%;
-  padding: 0 5%;
+  padding: 0 2%;
   z-index: 100;
   border-bottom: 3px solid #FB4949;
-}
-
-/* nav and stickly class at the same time */
-.nav.sticky {
-  position: fixed;
-  background-color: rgba(255, 255, 255, 0.95);
+  transition: 1s ease-in-out;
 }
 
 .nav__logo {
-    height: 75px;
+    height: 55px;
 }
 
 .nav__links {
   display: flex;
   align-items: center;
   list-style: none;
-
+  cursor: pointer;
 }
 
 .nav__item {
-    margin: 15px;
+    margin: 0 20px;
 }
 
 .nav__link {
   font-size: 20px;
-  font-weight: bold;
   color: inherit;
   text-decoration: none;
-  display: block;
+
+  transition: all .5s ease-in-out;
 }
 
-.nav__link--btn {
-  padding: 10px 25px;
+.nav__link:hover {
+  padding: 10px 50px;
   border-radius: 10px;
   font-weight: bold;
   background-color: #FB4949;
   color: whitesmoke;
 }
 
+/* nav and stickly class at the same time */
+.nav__sticky {  
+  position: fixed;
+  padding: 0 15%;
+  background-color: #37383D;
+}
+
+.nav__sticky .nav__links{
+  color: whitesmoke;
+}
+
 /* HEADER */
 .header {
-  padding: 0 15%;
+
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -136,6 +151,7 @@ p {
 }
 
 .header__title {
+    padding: 0 15%;
     line-height: 1.4;
     align-content: center;
     justify-content: center;
@@ -145,7 +161,7 @@ p {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 50px 100px;
+    gap: 10px 50px;
     grid-template-areas:
       "header__main__text       header__img__text"
       "header__second__text     header__img__text";
@@ -156,7 +172,6 @@ p {
 .header__second__text { grid-area: header__second__text; }
   
 .header__img__text { grid-area: header__img__text; margin: 0 auto;}  
-
 
 .highlight {
   position: relative;
