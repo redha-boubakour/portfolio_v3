@@ -62,7 +62,7 @@ h4 {
   display: inline-block;
   background-color: #FB4949;
   color: whitesmoke;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   border: none;
   padding: 15px 50px;
@@ -91,9 +91,9 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 9vh;
+  height: 8vh;
   width: 100%;
-  padding: 0 2%;
+  padding: 50px 2%;
   z-index: 100;
   border-bottom: 3px solid #FB4949;
   transition: 1s ease-in-out;
@@ -111,21 +111,28 @@ p {
 }
 
 .nav__item {
-    margin: 0 20px;
+    margin: 0 25px;
 }
 
 .nav__link {
-  font-size: 20px;
+  font-size: 25px;
   color: inherit;
   text-decoration: none;
-
-  transition: all .5s ease-in-out;
+  transition: all .5s ease-in;
 }
 
-.nav__link:hover {
+.nav__link--active {
   padding: 10px 50px;
   border-radius: 10px;
-  font-weight: bold; 
+  font-weight: bold;
+  background-color: #FB4949;
+  color: whitesmoke;
+}
+
+.nav__link:hover, .nav__link--active {
+  padding: 10px 50px;
+  border-radius: 10px;
+  font-weight: bold;
   background-color: #FB4949;
   color: whitesmoke;
 }
@@ -137,13 +144,13 @@ p {
   background-color: #37383D;
 }
 
-.nav__sticky .nav__links{
+.nav__sticky .nav__link {
+  font-size: 20px;
   color: whitesmoke;
 }
 
 /* HEADER */
 .header {
-
   height: 100vh;
   display: flex;
   flex-direction: column;
