@@ -9,6 +9,7 @@
         href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
         rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <title>MR BOUBAKOUR | Portfolio</title>
 </head>
 <body>
@@ -20,20 +21,24 @@
                 class="nav__logo"
                 id="logo"
             />
+            <div class="open__menu"><i class="fa fa-bars"></i></div>
+
             <ul class="nav__links">
                 <li class="nav__item">
-                    <a href="#header" class="nav__link">Home</a>
+                    <a href="#header" data-nav="home" class="nav__link">Home</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#section--1" class="nav__link">Projects</a>
+                    <a href="#projects" data-nav="projects" class="nav__link">Projects</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#section--2" class="nav__link">My journey</a>
+                    <a href="#journey" data-nav="journey" class="nav__link">Journey</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#section--3" class="nav__link">Contact</a>
+                    <a href="#contact" data-nav="contact" class="nav__link">Contact</a>
                 </li>
+                <div class="close__menu"><i class="fa fa-times"></i></div>
             </ul>
+
         </nav>
 
         <div class="header__title">
@@ -62,7 +67,7 @@
         </div>
     </header>
 
-    <section class="section" id="section--1">
+    <section class="section" id="projects">
         <div class="section__title section__title--projects">
             <h2 class="section__description">Projects</h2>
             <h3 class="section__header">
@@ -122,7 +127,7 @@
         <div class="dots"></div>
     </section>
 
-    <section class="section" id="section--2">
+    <section class="section" id="journey">
         <div class="section__title section__title--journey">
             <h2 class="section__description">My journey</h2>
             <h3 class="section__header">
@@ -131,7 +136,7 @@
         </div>    
     </section>
 
-    <section class="section" id="section--3">
+    <section class="section" id="contact">
         <div class="section__title">
             <h2 class="section__description">Contact</h2>
             <h3 class="section__header">

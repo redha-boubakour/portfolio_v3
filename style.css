@@ -2,8 +2,6 @@
 
 A faire :
 
-
-Sticky nav bar
 Caroussel sur les projets
 Smooth scroll effect : section by section
 media icons : linkedin, github, FCC
@@ -93,10 +91,10 @@ p {
   align-items: center;
   height: 8vh;
   width: 100%;
-  padding: 50px 2%;
+  padding: 50px 4%;
   z-index: 100;
   border-bottom: 3px solid #FB4949;
-  transition: 1s ease-in-out;
+  transition: .5s ease-in-out;
 }
 
 .nav__logo {
@@ -135,6 +133,11 @@ p {
   font-weight: bold;
   background-color: #FB4949;
   color: whitesmoke;
+}
+
+.open__menu, .close__menu {
+  display: none;
+  color: transparent;
 }
 
 /* nav and stickly class at the same time */
@@ -219,4 +222,70 @@ p {
     color: #aaa;
     text-align: center;
     padding: 10px;
+}
+
+/* Responive */
+
+@media (max-width: 1000px) {
+
+  h1 {
+    font-size: 30px;
+  }
+  
+  h4 {
+    font-size: 14px;
+  }
+
+  .section {
+    padding: 20% 15%;
+    border-top: 1px solid #ddd;
+    height: 100vh;
+  }
+
+  .header__title {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header__main__text"
+      "header__second__text";
+  }
+
+  .header__img__text {
+    display: none;
+  }
+
+  .open__menu {
+    font-size: 40px;
+    color: #FB4949;
+    cursor: pointer;
+    display: block;
+  }
+
+  .close__menu {
+    font-size: 40px;
+    color: #FB4949;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: none;
+  }
+
+  .nav__links {
+    background-color: #37383d;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    right: 0;
+    left: 0;
+    z-index: 10000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: top 1.5s ease;
+  }
+
+  .nav__item {
+    margin: 35px;
+    color: whitesmoke;
+  }
 }
