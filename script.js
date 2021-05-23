@@ -68,7 +68,7 @@ const navLinkCheck = function (entries) {
 };
 
 let sectionsObserver = new IntersectionObserver(navLinkCheck, {
-    threshold: 0.5
+    threshold: 0.7
 });
 
 sections.forEach(section => {

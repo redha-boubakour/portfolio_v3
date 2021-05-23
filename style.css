@@ -1,14 +1,14 @@
 /*  
 
-A faire :
+To do :
 
-Caroussel sur les projets
-Smooth scroll effect : section by section
-media icons : linkedin, github, FCC
+Caroussel on the projets section
+The journey section - Resume on scroll
+Media icons : linkedin, github, FCC
 
 */
 
-
+/* GLOBAL */
 * {
   margin: 0;
   padding: 0;
@@ -33,27 +33,31 @@ h4 {
   font-size: 18px;
 }
 
-.section {
+.section {  
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   padding: 10% 15%;
   border-top: 1px solid #ddd;
   height: 100vh;
 }
 
 .section__title {
-  margin: 0 auto;
+  margin: 0;
 }
 
-.section__description {
+.section__header {
   font-size: 40px;
   font-weight: bold;
   text-transform: uppercase;
   color: #FB4949;
 }
 
-.section__header {
+.section__description {
   font-size: 20px;
   line-height: 2;
   font-weight: 500;
+  
 }
 
 .btn {
@@ -135,12 +139,6 @@ p {
   color: whitesmoke;
 }
 
-.open__menu, .close__menu {
-  display: none;
-  color: transparent;
-}
-
-/* nav and stickly class at the same time */
 .nav__sticky {  
   position: fixed;
   padding: 0 15%;
@@ -150,6 +148,11 @@ p {
 .nav__sticky .nav__link {
   font-size: 20px;
   color: whitesmoke;
+}
+
+.open__menu, .close__menu {
+  display: none;
+  color: transparent;
 }
 
 /* HEADER */
@@ -204,8 +207,38 @@ p {
   background-color: #FB4949;
 }
 
-/* FOOTER */
+/* PROJECTS */
 
+.project {
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 4fr 1fr;
+  gap: 10px 50px;
+  grid-template-areas:
+    "project__title   project__title"
+    "project__text    project__img"
+    "project__tech    project__img";
+}
+
+.project__title { 
+  grid-area: project__title; 
+  font-weight: bold;
+  background-color: #FB4949;
+  color: whitesmoke;
+}
+
+.project__img { grid-area: project__img; }
+
+.project__text { grid-area: project__text; }
+
+.project__tech { grid-area: project__tech; }
+
+/* FOOTER */
 .footer {
     background-color: #37383d;
 }
@@ -224,7 +257,7 @@ p {
     padding: 10px;
 }
 
-/* Responive */
+/* RESPONSIVE */
 
 @media (max-width: 1000px) {
 
@@ -265,8 +298,8 @@ p {
     color: #FB4949;
     cursor: pointer;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 30px;
+    right: 30px;
     display: none;
   }
 
