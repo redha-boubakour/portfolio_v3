@@ -36,28 +36,9 @@ h4 {
 .section {  
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
   padding: 10% 15%;
   border-top: 1px solid #ddd;
   height: 100vh;
-}
-
-.section__title {
-  margin: 0;
-}
-
-.section__header {
-  font-size: 40px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #FB4949;
-}
-
-.section__description {
-  font-size: 20px;
-  line-height: 2;
-  font-weight: 500;
-  
 }
 
 .btn {
@@ -209,34 +190,86 @@ p {
 
 /* PROJECTS */
 
+.slider {
+  margin: auto;
+}
+
 .project {
+  overflow: hidden;
+  position: relative;
+  margin: auto;  
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.project__description {
+  text-align: center;
+  position: absolute;  
+  max-height: 100%;
+  transition: all 1.5s;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  z-index: 1;  
+  padding: 2% 5%;
+  opacity: 0;
   align-content: center;
   justify-content: center;
   align-items: center;
-  justify-items: center;
-  margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 4fr 1fr;
-  gap: 10px 50px;
+  grid-template-rows: 2fr 1fr 1fr;
+  gap: 20px 10%;
   grid-template-areas:
-    "project__title   project__title"
-    "project__text    project__img"
-    "project__tech    project__img";
+    "project__title project__title"
+    "project__text project__mini__img__1"
+    "project__tech project__mini__img__2";
 }
 
 .project__title { 
   grid-area: project__title; 
   font-weight: bold;
-  background-color: #FB4949;
-  color: whitesmoke;
+  font-size: 40px;
 }
 
-.project__img { grid-area: project__img; }
+.project__text { 
+  grid-area: project__text; 
+  font-size: 15px;
+}
 
-.project__text { grid-area: project__text; }
+.project__tech { 
+  grid-area: project__tech;
+  font-size: 20px;
+}
 
-.project__tech { grid-area: project__tech; }
+.project__img { 
+  max-width: 100%;
+  filter: blur(0px);
+  transition: all 1.5s;
+}
+
+.project:hover .project__img {
+  filter: blur(8px);
+  transition: all 1.5s;
+}
+
+.project:hover .project__description {
+  transition: all 1.5s;
+  opacity: 1;
+}
+
+.project__mini__img__1 { 
+  grid-area: project__mini__img__1;
+  max-width: 80%; 
+  margin: auto;
+  border-radius: 10px;
+}
+
+.project__mini__img__2 { 
+  grid-area: project__mini__img__2;  
+  width: 80%; 
+  margin: auto;
+  border-radius: 10px;
+}
 
 /* FOOTER */
 .footer {

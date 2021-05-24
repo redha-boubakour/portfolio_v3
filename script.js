@@ -53,8 +53,6 @@ headerObserver.observe(header);
 
 const navLinkCheck = function (entries) {
     entries.forEach(entry => {
-        console.log(entry.isIntersecting);
-        console.log(entry.target.id);
         if (entry.isIntersecting) {
             navLinks.forEach(link => {
                 if (entry.target.id === link.dataset.nav) {
@@ -92,3 +90,6 @@ function close() {
 
 openMenu.addEventListener('click', show);
 closeMenu.addEventListener('click', close);
+
+// The Caroussel part
+
