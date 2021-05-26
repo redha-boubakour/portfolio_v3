@@ -93,3 +93,34 @@ closeMenu.addEventListener('click', close);
 
 // The Caroussel part
 
+
+
+
+const slides = document.querySelectorAll('.slide');
+const slider = document.querySelector('.slider');
+const btnLeft = document.querySelector('.slider__btn--left');
+const btnRight = document.querySelector('.slider__btn--right');
+
+let currentSlide = 0;
+const maxSlide = slides.length;
+
+const goToSlide = function(slide) {
+    slides.forEach((s, i) => (s.style.transform = `translate(${100 * (i - slide) - 50}%, -50%)`));
+}
+
+goToSlide(0);
+
+btnRight.addEventListener('click', function() {
+    if (currentSlide === maxSlide - 1) {
+        currentSlide = 0;
+    } else {
+        currentSlide++;
+    }
+ 
+    goToSlide(currentSlide);
+});
+
+btnLeft.addEventListener('click', function() {
+    currentSlide--; 
+    slides.forEach((s, i) => (s.style.transform = `translate(${100 * (i - currentSlide) - 50}%, -50%)`));
+});

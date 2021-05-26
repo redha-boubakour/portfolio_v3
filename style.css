@@ -36,9 +36,11 @@ h4 {
 .section {  
   display: flex;
   justify-content: space-between;
-  padding: 10% 15%;
+  align-items: center;
+  padding: 15% 15% 10% 15%;
   border-top: 1px solid #ddd;
   height: 100vh;
+  overflow: hidden;
 }
 
 .btn {
@@ -191,11 +193,16 @@ p {
 /* PROJECTS */
 
 .slider {
-  margin: auto;
+
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  transition: transform 1s;
 }
 
 .project {
-  overflow: hidden;
   position: relative;
   margin: auto;  
   border-radius: 10px;
@@ -205,24 +212,24 @@ p {
 .project__description {
   text-align: center;
   position: absolute;  
-  max-height: 100%;
+  height: 100%;
   transition: all 1.5s;
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
   z-index: 1;  
-  padding: 2% 5%;
+  padding: 2% 15%;
   opacity: 0;
   align-content: center;
   justify-content: center;
   align-items: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   gap: 20px 10%;
   grid-template-areas:
-    "project__title project__title"
+    "project__title project__tech"
     "project__text project__mini__img__1"
-    "project__tech project__mini__img__2";
+    "project__text project__mini__img__2";
 }
 
 .project__title { 
@@ -233,16 +240,16 @@ p {
 
 .project__text { 
   grid-area: project__text; 
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .project__tech { 
   grid-area: project__tech;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .project__img { 
-  max-width: 100%;
+  max-width: 80vw;
   filter: blur(0px);
   transition: all 1.5s;
 }
@@ -269,6 +276,18 @@ p {
   width: 80%; 
   margin: auto;
   border-radius: 10px;
+}
+
+.slider__btn {
+  z-index: 10;
+  border: none;
+  background: #FB4949;
+  color: #333;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+  margin: 0 -40px;
 }
 
 /* FOOTER */
