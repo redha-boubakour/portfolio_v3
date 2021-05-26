@@ -240,7 +240,7 @@ p {
   grid-template-areas:
     "project__title project__tech"
     "project__text project__mini__img__1"
-    "project__text project__mini__img__2";
+    "project__link project__mini__img__2";
 }
 
 .project__title { 
@@ -347,7 +347,7 @@ p {
   .section {
     padding: 20% 15%;
     border-top: 1px solid #ddd;
-    height: 100vh;
+    height: auto;
   }
 
   .header__title {
@@ -390,6 +390,39 @@ p {
     justify-content: center;
     align-items: center;
     transition: top 1.5s ease;
+  }
+
+  .slider {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    overflow: initial;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .slide {
+    position: unset;
+    transition: transform 1s;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    margin: 20px 0;
+  }
+
+  .project__description {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "project__title"
+      "project__link";
+  }
+
+  .slider__btn, .project__text, .project__tech, .project__mini__img__1, .project__mini__img__2 {
+    display: none;
   }
 
   .nav__item {

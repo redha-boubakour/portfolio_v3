@@ -93,13 +93,9 @@ closeMenu.addEventListener('click', close);
 
 // The Caroussel part
 
-
-
-
 const slides = document.querySelectorAll('.slide');
-const slider = document.querySelector('.slider');
-const btnLeft = document.querySelector('.slider__btn--left');
-const btnRight = document.querySelector('.slider__btn--right');
+const slidesBtnLeft = document.querySelector('.slider__btn--left');
+const slidesBtnRight = document.querySelector('.slider__btn--right');
 
 let currentSlide = 0;
 const maxSlide = slides.length;
@@ -108,23 +104,38 @@ const goToSlide = function(slide) {
     slides.forEach((s, i) => (s.style.transform = `translate(${100 * (i - slide)}%)`));
 }
 
-goToSlide(0);
+const resetSlides = function() {
+    slides.forEach((s, i) => (s.style.transform = `translate(0)`));
+}
 
-btnRight.addEventListener('click', function() {
-    if (currentSlide === maxSlide - 1) {
-        currentSlide = 0;
-    } else {
-        currentSlide++;
-    }
- 
-    goToSlide(currentSlide);
-});
+// Create a condition that targets viewports at least 1000px wide
+const mediaQuery = window.matchMedia('(min-width: 1000px)')
 
-btnLeft.addEventListener('click', function() {
-    if (currentSlide === 0) {
-        currentSlide = maxSlide - 1;
-    } else {
-        currentSlide--;
-    }
-    goToSlide(currentSlide);
-});
+function handleTabletChange(e) {
+  // Check if the media query is true
+  if (e.matches) {
+    goToSlide(0);
+    slidesBtnRight.addEventListener('click', function() {
+        if (currentSlide === maxSlide - 1) {
+            currentSlide = 0;
+        } else {
+            currentSlide++;
+        }
+        goToSlide(currentSlide);
+    });
+    
+    slidesBtnLeft.addEventListener('click', function() {
+        if (currentSlide === 0) {
+            currentSlide = maxSlide - 1;
+        } else {
+            currentSlide--;
+        }
+        goToSlide(currentSlide);
+    });
+  } else {
+    resetSlides();
+  }
+}
+
+mediaQuery.addListener(handleTabletChange);
+handleTabletChange(mediaQuery);
