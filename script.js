@@ -105,8 +105,29 @@ const goToSlide = function(slide) {
 }
 
 const resetSlides = function() {
-    slides.forEach((s, i) => (s.style.transform = `translate(0)`));
+    slides.forEach((s) => (s.style.transform = `unset`));
+    currentSlide = 0;
 }
+
+slidesBtnRight.addEventListener('click', function() {
+    console.log(currentSlide);
+    if (currentSlide === maxSlide - 1) {
+        currentSlide = 0;
+    } else {
+        currentSlide++;
+    }
+    goToSlide(currentSlide);
+});
+
+slidesBtnLeft.addEventListener('click', function() {
+    console.log(currentSlide);
+    if (currentSlide === 0) {
+        currentSlide = maxSlide - 1;
+    } else {
+        currentSlide--;
+    }
+    goToSlide(currentSlide);
+});
 
 // Create a condition that targets viewports at least 1000px wide
 const mediaQuery = window.matchMedia('(min-width: 1000px)')
@@ -115,23 +136,8 @@ function handleTabletChange(e) {
   // Check if the media query is true
   if (e.matches) {
     goToSlide(0);
-    slidesBtnRight.addEventListener('click', function() {
-        if (currentSlide === maxSlide - 1) {
-            currentSlide = 0;
-        } else {
-            currentSlide++;
-        }
-        goToSlide(currentSlide);
-    });
-    
-    slidesBtnLeft.addEventListener('click', function() {
-        if (currentSlide === 0) {
-            currentSlide = maxSlide - 1;
-        } else {
-            currentSlide--;
-        }
-        goToSlide(currentSlide);
-    });
+
+
   } else {
     resetSlides();
   }
