@@ -37,7 +37,7 @@ h4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15% 15% 10% 15%;
+  padding: 5% 15%;
   border-top: 1px solid #ddd;
   height: 100vh;
   overflow: hidden;
@@ -79,7 +79,7 @@ p {
   height: 8vh;
   width: 100%;
   padding: 50px 4%;
-  z-index: 100;
+  z-index: 5;
   border-bottom: 3px solid #FB4949;
   transition: .5s ease-in-out;
 }
@@ -193,39 +193,50 @@ p {
 /* PROJECTS */
 
 .slider {
-
+  margin-top: 5%;
+  display: flex;
+  overflow: hidden;
   position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
 }
 
 .slide {
   position: absolute;
   transition: transform 1s;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .project {
   position: relative;
-  margin: auto;  
   border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  
 }
 
 .project__description {
-  text-align: center;
   position: absolute;  
   height: 100%;
   transition: all 1.5s;
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
   z-index: 1;  
-  padding: 2% 15%;
+  padding: 4% 12%;
   opacity: 0;
+  border-radius: 10px;
+  text-align: center;
   align-content: center;
   justify-content: center;
   align-items: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 20px 10%;
+  gap: 20px 50px;
   grid-template-areas:
     "project__title project__tech"
     "project__text project__mini__img__1"
@@ -238,20 +249,32 @@ p {
   font-size: 40px;
 }
 
+.project__tech { 
+  grid-area: project__tech;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px;
+  margin: 0 50px;
+}
+
 .project__text { 
   grid-area: project__text; 
   font-size: 18px;
 }
 
-.project__tech { 
-  grid-area: project__tech;
-  font-size: 25px;
+.project__link {
+  font-size: 50px;
+  color: whitesmoke;
+  text-decoration: none;
 }
 
 .project__img { 
-  max-width: 80vw;
   filter: blur(0px);
   transition: all 1.5s;
+  max-width: 80vw;
+  max-height: 70vh;
+  border-radius: 10px;
+  opacity: 0.9;
 }
 
 .project:hover .project__img {
@@ -279,7 +302,7 @@ p {
 }
 
 .slider__btn {
-  z-index: 10;
+  z-index: 2;
   border: none;
   background: #FB4949;
   color: #333;
@@ -287,7 +310,7 @@ p {
   width: 75px;
   height: 75px;
   cursor: pointer;
-  margin: 0 -40px;
+  margin: 4% -40px 0 -40px;
 }
 
 /* FOOTER */
@@ -362,7 +385,7 @@ p {
     top: -100vh;
     right: 0;
     left: 0;
-    z-index: 10000;
+    z-index: 5;
     flex-direction: column;
     justify-content: center;
     align-items: center;

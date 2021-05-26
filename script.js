@@ -105,7 +105,7 @@ let currentSlide = 0;
 const maxSlide = slides.length;
 
 const goToSlide = function(slide) {
-    slides.forEach((s, i) => (s.style.transform = `translate(${100 * (i - slide) - 50}%, -50%)`));
+    slides.forEach((s, i) => (s.style.transform = `translate(${100 * (i - slide)}%)`));
 }
 
 goToSlide(0);
@@ -121,6 +121,10 @@ btnRight.addEventListener('click', function() {
 });
 
 btnLeft.addEventListener('click', function() {
-    currentSlide--; 
-    slides.forEach((s, i) => (s.style.transform = `translate(${100 * (i - currentSlide) - 50}%, -50%)`));
+    if (currentSlide === 0) {
+        currentSlide = maxSlide - 1;
+    } else {
+        currentSlide--;
+    }
+    goToSlide(currentSlide);
 });
