@@ -192,7 +192,7 @@ p {
 
 /* PROJECTS */
 
-.slider {
+.slider__project {
   margin-top: 5%;
   display: flex;
   overflow: hidden;
@@ -206,7 +206,7 @@ p {
   border-radius: 10px;
 }
 
-.slide {
+.slide__project {
   position: absolute;
   transition: transform 1s;
   border-radius: 10px;
@@ -216,7 +216,6 @@ p {
 .project {
   position: relative;
   border-radius: 10px;
-  
 }
 
 .project__description {
@@ -301,7 +300,7 @@ p {
   border-radius: 10px;
 }
 
-.slider__btn {
+.slider__project__btn {
   z-index: 2;
   border: none;
   background: #FB4949;
@@ -392,7 +391,12 @@ p {
     transition: top 1.5s ease;
   }
 
-  .slider {
+  .nav__item {
+    margin: 35px;
+    color: whitesmoke;
+  }
+
+  .slider__project {
     display: flex;
     flex-direction: column;
     overflow: initial;
@@ -402,7 +406,7 @@ p {
     border-radius: 10px;
   }
   
-  .slide {
+  .slide__project {
     position: unset;
     transition: transform 1s;
     border-radius: 10px;
@@ -420,12 +424,7 @@ p {
       "project__link";
   }
 
-  .slider__btn, .project__text, .project__tech, .project__mini__img__1, .project__mini__img__2 {
+  .slider__project__btn, .project__text, .project__tech, .project__mini__img__1, .project__mini__img__2 {
     display: none;
-  }
-
-  .nav__item {
-    margin: 35px;
-    color: whitesmoke;
   }
 }

@@ -93,41 +93,44 @@ closeMenu.addEventListener('click', close);
 
 // The Caroussel part
 
-const slides = document.querySelectorAll('.slide');
-const slidesBtnLeft = document.querySelector('.slider__btn--left');
-const slidesBtnRight = document.querySelector('.slider__btn--right');
+const slidesProjects = document.querySelectorAll('.slide__project');
+const projectBtnLeft = document.querySelector('.slider__project__btn--left');
+const projectBtnRight = document.querySelector('.slider__project__btn--right');
 
-let currentSlide = 0;
-const maxSlide = slides.length;
+const maxProject = slidesProjects.length;
+let currentProject = 0;
 
-const goToSlide = function(slide) {
-    slides.forEach((s, i) => (s.style.transform = `translate(${100 * (i - slide)}%)`));
+const goToProject = function(slideProject) {
+    slidesProjects.forEach((s, i) => (s.style.transform = `translate(${100 * (i - slideProject)}%)`));
 }
 
-const resetSlides = function() {
-    slides.forEach((s) => (s.style.transform = `unset`));
-    currentSlide = 0;
+const resetSlidesProject = function() {
+    slidesProjects.forEach((s) => (s.style.transform = `unset`));
+    currentProject = 0;
 }
 
-slidesBtnRight.addEventListener('click', function() {
-    console.log(currentSlide);
-    if (currentSlide === maxSlide - 1) {
-        currentSlide = 0;
+projectBtnRight.addEventListener('click', function() {
+    console.log(currentProject);
+    if (currentProject === maxProject - 1) {
+        currentProject = 0;
     } else {
-        currentSlide++;
+        currentProject++;
     }
-    goToSlide(currentSlide);
+    goToProject(currentProject);
 });
 
-slidesBtnLeft.addEventListener('click', function() {
-    console.log(currentSlide);
-    if (currentSlide === 0) {
-        currentSlide = maxSlide - 1;
+projectBtnLeft.addEventListener('click', function() {
+    console.log(currentProject);
+    if (currentProject === 0) {
+        currentProject = maxProject - 1;
     } else {
-        currentSlide--;
+        currentProject--;
     }
-    goToSlide(currentSlide);
+    goToProject(currentProject);
 });
+
+/* ////// MEDIA ////// 
+   ////// QUERY ////// */
 
 // Create a condition that targets viewports at least 1000px wide
 const mediaQuery = window.matchMedia('(min-width: 1000px)')
@@ -135,11 +138,11 @@ const mediaQuery = window.matchMedia('(min-width: 1000px)')
 function handleTabletChange(e) {
   // Check if the media query is true
   if (e.matches) {
-    goToSlide(0);
+    goToProject(0);
 
 
   } else {
-    resetSlides();
+    resetSlidesProject();
   }
 }
 
