@@ -1,18 +1,25 @@
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-
 const nav = document.querySelector('.nav');
 const sections = document.querySelectorAll('section');
-const section1 = document.querySelector('#projects');
 const navLinks = document.querySelectorAll('.nav__link');
 
-const Links = document.querySelector('.nav__links');
-const openMenu = document.querySelector('.open__menu');
-const closeMenu = document.querySelector('.close__menu');
+// Related to the stickiness of the nav bar
+
+const stickyNav = function (entries) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) nav.classList.add('nav__sticky');
+        else nav.classList.remove('nav__sticky');
+    });
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+    threshold: 1
+});
+
+headerObserver.observe(header);
 
 // On click, Allow the nav links to go to their respectives sections
 
-function makeNavLinksSmooth() {
-    
+const makeNavLinksSmooth = function() {
     for (let n in navLinks) {
         if (navLinks.hasOwnProperty(n)) {
             navLinks[n].addEventListener('click', e => {
@@ -30,24 +37,12 @@ makeNavLinksSmooth();
 
 // Allow the 'My achievements ? ↓' button to lead smoothly to 'the projects' section
 
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const sectionProject = document.querySelector('#projects');
+
 btnScrollTo.addEventListener('click', function(e) {
-    section1.scrollIntoView({ behavior: 'smooth' });
+    sectionProject.scrollIntoView({ behavior: 'smooth' });
 });
-
-// Related to the stickiness of the nav bar
-
-const stickyNav = function (entries) {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) nav.classList.add('nav__sticky');
-        else nav.classList.remove('nav__sticky');
-    });
-};
-
-const headerObserver = new IntersectionObserver(stickyNav, {
-    threshold: 1
-});
-
-headerObserver.observe(header);
 
 // Related to the nav links sticking with the sections in the viewport
 
@@ -74,43 +69,24 @@ sections.forEach(section => {
 });
 sectionsObserver.observe(header);
 
-// Related to the hamburger menu 
+// The Caroussel of the projects
 
-function show() {
-    openMenu.style.display = 'none';
-    closeMenu.style.display = 'block';
-    Links.style.top = '0';
-}
-
-function close() {
-    openMenu.style.display = 'block';
-    closeMenu.style.display = 'none';
-    Links.style.top = '-100%';
-}
-
-openMenu.addEventListener('click', show);
-closeMenu.addEventListener('click', close);
-
-// The Caroussel part
-
-const slidesProjects = document.querySelectorAll('.slide__project');
+const projects = document.querySelectorAll('.slide__project');
 const projectBtnLeft = document.querySelector('.slider__project__btn--left');
 const projectBtnRight = document.querySelector('.slider__project__btn--right');
-
-const maxProject = slidesProjects.length;
+const maxProject = projects.length;
 let currentProject = 0;
 
-const goToProject = function(slideProject) {
-    slidesProjects.forEach((s, i) => (s.style.transform = `translate(${100 * (i - slideProject)}%)`));
+const goToProject = function(project) {
+    projects.forEach((s, i) => (s.style.transform = `translate(${100 * (i - project)}%)`));
 }
 
 const resetSlidesProject = function() {
-    slidesProjects.forEach((s) => (s.style.transform = `unset`));
+    projects.forEach((s) => (s.style.transform = `unset`));
     currentProject = 0;
 }
 
 projectBtnRight.addEventListener('click', function() {
-    console.log(currentProject);
     if (currentProject === maxProject - 1) {
         currentProject = 0;
     } else {
@@ -120,7 +96,6 @@ projectBtnRight.addEventListener('click', function() {
 });
 
 projectBtnLeft.addEventListener('click', function() {
-    console.log(currentProject);
     if (currentProject === 0) {
         currentProject = maxProject - 1;
     } else {
@@ -129,8 +104,28 @@ projectBtnLeft.addEventListener('click', function() {
     goToProject(currentProject);
 });
 
-/* ////// MEDIA ////// 
-   ////// QUERY ////// */
+// Related to the hamburger menu 
+
+const openMenu = document.querySelector('.open__menu');
+const closeMenu = document.querySelector('.close__menu');
+const Links = document.querySelector('.nav__links');
+
+const show = function() {
+    openMenu.style.display = 'none';
+    closeMenu.style.display = 'block';
+    Links.style.top = '0';
+}
+
+const close = function() {
+    openMenu.style.display = 'block';
+    closeMenu.style.display = 'none';
+    Links.style.top = '-100%';
+}
+
+openMenu.addEventListener('click', show);
+closeMenu.addEventListener('click', close);
+
+/* ////// MEDIA QUERY ////// */
 
 // Create a condition that targets viewports at least 1000px wide
 const mediaQuery = window.matchMedia('(min-width: 1000px)')
@@ -139,8 +134,6 @@ function handleTabletChange(e) {
   // Check if the media query is true
   if (e.matches) {
     goToProject(0);
-
-
   } else {
     resetSlidesProject();
   }
