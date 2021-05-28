@@ -114,14 +114,6 @@ p {
   color: whitesmoke;
 }
 
-.nav__link:hover, .nav__link--active {
-  padding: 10px 50px;
-  border-radius: 10px;
-  font-weight: bold;
-  background-color: #FB4949;
-  color: whitesmoke;
-}
-
 .nav__sticky {  
   position: fixed;
   padding: 0 15%;
@@ -316,6 +308,57 @@ p {
   margin: 4% -40px 0 -40px;
 }
 
+/* Journey */
+
+.container__journey {
+  width: 100%;
+}
+
+.period__link {
+  color: inherit;
+  text-decoration: none;
+  transition: all .5s ease-in;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+}
+
+.period__link--active {
+  font-size: 25px;
+  padding: 10px 50px;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: #FB4949;
+  color: whitesmoke;
+}
+
+.periods__links {
+  min-height: 8vh;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 15%;
+}
+
+.periods__contents {
+  padding: 10%;
+  min-height: 60vh;
+  background-color: #37383d;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  color: whitesmoke;
+}
+
+.period__content {
+  display: none;
+}
+
+.period__content--active {
+  display: block;
+}
+
 /* FOOTER */
 .footer {
     background-color: #37383d;
@@ -348,7 +391,7 @@ p {
   }
 
   .section {
-    padding: 20% 15%;
+    padding: 15% 8%;
     border-top: 1px solid #ddd;
     height: auto;
   }
@@ -430,5 +473,19 @@ p {
 
   .slider__project__btn, .project__text, .project__tech, .project__mini__img__1, .project__mini__img__2 {
     display: none;
+  }
+
+  .period__link {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .periods__links {
+    min-height: 10vh;
+    margin: 0;
+  }
+
+  .periods__contents {
+    min-height: 70vh;
   }
 }

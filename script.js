@@ -69,7 +69,7 @@ sections.forEach(section => {
 });
 sectionsObserver.observe(header);
 
-// The Caroussel of the projects
+// The Caroussel of the 'projects' section
 
 const projects = document.querySelectorAll('.slide__project');
 const projectBtnLeft = document.querySelector('.slider__project__btn--left');
@@ -103,6 +103,26 @@ projectBtnLeft.addEventListener('click', function() {
     }
     goToProject(currentProject);
 });
+
+// The 'Journey' section
+
+const containerLinks = document.querySelector('.container__journey');
+const periodsLinks = document.querySelectorAll('.period__link');
+const periodsContents = document.querySelectorAll('.period__content');
+
+containerLinks.addEventListener('click', function (e) {
+    // Reach the closest element to the click
+    const closestElementClicked = e.target.closest('.period__link');
+    if (!closestElementClicked) return;
+
+    // Removing all the 'active' elements
+    periodsLinks.forEach(periodLink => periodLink.classList.remove('period__link--active'));
+    periodsContents.forEach(periodContent => periodContent.classList.remove('period__content--active'));
+
+    // Adding the 'active' elements depending on the click
+    closestElementClicked.classList.add('period__link--active');
+    document.querySelector(`.period__content--${closestElementClicked.dataset.tab}`).classList.add('period__content--active');
+})
 
 // Related to the hamburger menu 
 
