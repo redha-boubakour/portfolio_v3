@@ -238,8 +238,8 @@ p {
   gap: 20px 50px;
   grid-template-areas:
     "project__title project__tech"
-    "project__text project__mini__img__1"
-    "project__link project__mini__img__2";
+    "project__info project__mini__img__1"
+    "project__info project__mini__img__2";
 }
 
 .project__title { 
@@ -256,15 +256,19 @@ p {
   margin: 0 50px;
 }
 
+.project__info { 
+  grid-area: project__info; 
+
+}
+
 .project__text { 
-  grid-area: project__text; 
+  color: whitesmoke;
   font-size: 16px;
 }
 
 .project__link {
   font-size: 50px;
   color: whitesmoke;
-  text-decoration: none;
 }
 
 .project__img { 
@@ -421,7 +425,7 @@ p {
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
       "project__title"
-      "project__link";
+      "project__info";
   }
 
   .slider__project__btn, .project__text, .project__tech, .project__mini__img__1, .project__mini__img__2 {
