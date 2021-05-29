@@ -131,6 +131,7 @@ p {
 }
 
 /* HEADER */
+
 .header {
   height: 100vh;
   display: flex;
@@ -308,7 +309,7 @@ p {
   margin: 4% -40px 0 -40px;
 }
 
-/* Journey */
+/* JOURNEY */
 
 .container__journey {
   width: 100%;
@@ -333,7 +334,7 @@ p {
 }
 
 .periods__links {
-  min-height: 8vh;
+  min-height: 7vh;
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -343,23 +344,57 @@ p {
 }
 
 .periods__contents {
-  padding: 10%;
-  min-height: 60vh;
+  padding: 5%;
+  min-height: 50vh;
   background-color: #37383d;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   color: whitesmoke;
+  font-size: 18px;
+}
+
+.periods__contents p {
+  color: whitesmoke;
+}
+
+.periods__contents li {
+  margin: 0 5%;
 }
 
 .period__content {
   display: none;
+  min-height: 50vh;
+
 }
 
-.period__content--active {
-  display: block;
+.period__content--active { 
+  text-align: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px 10%;
+  grid-template-areas:
+    "period__title period__text"
+    "period__icon period__text";
+}
+
+.period__title {
+  font-size: 40px;
+  grid-area: period__title;
+}
+
+.period__icon {
+  grid-area: period__icon;
+}
+
+.period__text {
+  grid-area: period__text;
+  text-align: left;
 }
 
 /* FOOTER */
+
 .footer {
     background-color: #37383d;
 }
@@ -393,6 +428,9 @@ p {
   .section {
     padding: 15% 8%;
     border-top: 1px solid #ddd;
+  }
+
+  #projects {
     height: auto;
   }
 
@@ -471,7 +509,7 @@ p {
       "project__info";
   }
 
-  .slider__project__btn, .project__text, .project__tech, .project__mini__img__1, .project__mini__img__2 {
+  .slider__project__btn, .project__text, .project__tech, .project__mini__img__1, .project__mini__img__2, .period__icon{
     display: none;
   }
 
@@ -487,5 +525,15 @@ p {
 
   .periods__contents {
     min-height: 70vh;
+    padding: 10%;
+  }
+
+  .period__content--active { 
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 0.6fr;
+    gap: 20px;
+    grid-template-areas:
+      "period__title"
+      "period__text";
   }
 }
