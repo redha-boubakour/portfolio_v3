@@ -60,7 +60,7 @@ const navLinkCheck = function (entries) {
     });
 };
 
-let sectionsObserver = new IntersectionObserver(navLinkCheck, {
+const sectionsObserver = new IntersectionObserver(navLinkCheck, {
     threshold: 0.7
 });
 
@@ -68,6 +68,26 @@ sections.forEach(section => {
     sectionsObserver.observe(section);
 });
 sectionsObserver.observe(header);
+
+// Revealing the content of the sections on scroll
+
+const revealSection = function (entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.remove('section--hidden');
+            sectionsRevealObserver.unobserve(entry.target);
+        }
+    });
+};
+
+const sectionsRevealObserver = new IntersectionObserver(revealSection, {
+    threshold: 0.15
+});
+
+sections.forEach(section => {
+    sectionsRevealObserver.observe(section);
+    section.classList.add('section--hidden');
+});
 
 // The Caroussel of the 'projects' section
 
@@ -145,7 +165,7 @@ const close = function() {
 openMenu.addEventListener('click', show);
 closeMenu.addEventListener('click', close);
 
-/* ////// MEDIA QUERY ////// */
+// MEDIA QUERY
 
 // Create a condition that targets viewports at least 1000px wide
 const mediaQuery = window.matchMedia('(min-width: 1000px)')

@@ -9,6 +9,7 @@ Media icons : linkedin, github, FCC
 */
 
 /* GLOBAL */
+
 * {
   margin: 0;
   padding: 0;
@@ -26,7 +27,7 @@ body {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 45px;
 }
 
 h4 {
@@ -41,6 +42,11 @@ h4 {
   border-top: 1px solid #ddd;
   height: 100vh;
   overflow: hidden;
+  transition: 1.5s ease-in-out;
+}
+
+.section--hidden {
+  opacity: 0;
 }
 
 .btn {
@@ -72,6 +78,7 @@ p {
 }
 
 /* NAVIGATION */
+
 .nav {  
   display: flex;
   justify-content: space-between;
@@ -106,7 +113,8 @@ p {
   transition: all .5s ease-in;
 }
 
-.nav__link--active {
+.nav__link--active, .contact__btn {
+  text-decoration: none;
   padding: 10px 50px;
   border-radius: 10px;
   font-weight: bold;
@@ -150,7 +158,7 @@ p {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 10px 50px;
+    gap: 0 50px;
     grid-template-areas:
       "header__main__text       header__img__text"
       "header__second__text     header__img__text";
@@ -158,7 +166,7 @@ p {
   
 .header__main__text { grid-area: header__main__text; }
   
-.header__second__text { grid-area: header__second__text; }
+.header__second__text { grid-area: header__second__text; margin-top: auto; }
   
 .header__img__text { 
   grid-area: header__img__text; 
@@ -166,6 +174,8 @@ p {
   max-width: 450px;  
   border-radius: 50%; 
   transition: all .5s ease-in;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
 }  
 
 .header__img__text:hover {
@@ -264,6 +274,20 @@ p {
 
 }
 
+.project__mini__img__1 { 
+  grid-area: project__mini__img__1;
+  max-width: 80%; 
+  margin: auto;
+  border-radius: 10px;
+}
+
+.project__mini__img__2 { 
+  grid-area: project__mini__img__2;  
+  width: 80%; 
+  margin: auto;
+  border-radius: 10px;
+}
+
 .project__text { 
   color: whitesmoke;
   font-size: 16px;
@@ -293,20 +317,6 @@ p {
   opacity: 1;
 }
 
-.project__mini__img__1 { 
-  grid-area: project__mini__img__1;
-  max-width: 80%; 
-  margin: auto;
-  border-radius: 10px;
-}
-
-.project__mini__img__2 { 
-  grid-area: project__mini__img__2;  
-  width: 80%; 
-  margin: auto;
-  border-radius: 10px;
-}
-
 .slider__project__btn {
   z-index: 2;
   border: none;
@@ -322,7 +332,18 @@ p {
 /* JOURNEY */
 
 .container__journey {
+  margin-top: 5%;
   width: 100%;
+}
+
+.periods__links {
+  min-height: 7vh;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 15%;
 }
 
 .period__link {
@@ -341,16 +362,6 @@ p {
   font-weight: bold;
   background-color: #FB4949;
   color: whitesmoke;
-}
-
-.periods__links {
-  min-height: 7vh;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 15%;
 }
 
 .periods__contents {
@@ -374,7 +385,6 @@ p {
 .period__content {
   display: none;
   min-height: 50vh;
-
 }
 
 .period__content--active { 
@@ -389,26 +399,62 @@ p {
     "period__icon period__text";
 }
 
-.period__title {
-  grid-area: period__title;
-}
+.period__title {grid-area: period__title;}
+.period__icon {grid-area: period__icon;}
+.period__text {grid-area: period__text; text-align: left;}
 
 .period__title__main {
   font-size: 40px;
 }
 
 .period__title__subtitle {
-  margin-top: 10px;
+  margin-top: 10px; 
   font-size: 20px;
 }
 
-.period__icon {
-  grid-area: period__icon;
+/* CONTACT */
+
+.container__contact { 
+  padding: 0 10%;
+  width: 100%;
+  min-height: 60vh;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 4fr;
+  gap: 0 10%;
+  grid-template-areas:
+    "contact__text    contact__text      contact__text"
+    "contact__btn     contact__btn       contact__btn"
+    "contact__github  contact__linkedin  contact__freecodecamp";
 }
 
-.period__text {
-  grid-area: period__text;
-  text-align: left;
+.contact__text { grid-area: contact__text; padding: 0 20%; font-size: 18px; line-height: 1.4;}
+.contact__btn { grid-area: contact__btn; }
+.contact__github { grid-area: contact__github; }
+.contact__linkedin { grid-area: contact__linkedin; }
+
+.contact__link {
+  background-color: #FB4949;
+  color: whitesmoke;
+  padding: 10%;
+  border-radius: 10px;
+  margin-top: auto;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact__link p {
+  color: whitesmoke;
+}
+
+.contact__btn {
+  max-width: 250px;
+  margin: auto;
+  font-size: 25px;
 }
 
 /* FOOTER */
@@ -439,7 +485,7 @@ p {
   }
 
   .header__img__text { 
-    max-width: 300px;  
+    max-width: 350px;  
   }
 }
 
@@ -464,7 +510,6 @@ p {
 
   .header__title {
     grid-template-columns: 1fr;
-    gap: 10vh;
     grid-template-areas:
       "header__main__text"
       "header__second__text";
@@ -538,7 +583,7 @@ p {
       "project__info";
   }
 
-  .slider__project__btn, .project__text, .project__tech, .project__mini__img__1, .project__mini__img__2, .period__icon {
+  .slider__project__btn, .project__text, .project__tech, .project__mini__img__1, .project__mini__img__2, .period__icon, .contact__freecodecamp {
     display: none;
   }
 
@@ -564,5 +609,24 @@ p {
     grid-template-areas:
       "period__title"
       "period__text";
+  }
+
+  .container__contact { 
+    padding: 0 10%;
+    width: 100%;
+    min-height: 60vh;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
+  .contact__text {
+    padding: 0;
+  }
+
+  .contact__link {
+    font-size: 15px;
   }
 }
