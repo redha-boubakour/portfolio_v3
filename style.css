@@ -606,7 +606,7 @@ a:hover {
     margin: 0;
   }
 
-  .container__journey {
+  .container__journey, .slider__project {
     margin: 20% 0;
   }
 
