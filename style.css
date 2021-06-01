@@ -611,13 +611,13 @@ a:hover {
   }
 
   .periods__contents {
-    min-height: 70vh;
+    min-height: 72vh;
     padding: 10%;
   }
 
   .period__content--active { 
     grid-template-columns: 1fr;
-    grid-template-rows: 200px 1fr;
+    grid-template-rows: 80px 1fr;
     font-size: 15px;
     grid-template-areas:
       "period__title"
