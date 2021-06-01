@@ -27,7 +27,7 @@ body {
 }
 
 h1 {
-  font-size: 45px;
+  font-size: 42px;
 }
 
 h4 {
@@ -75,6 +75,14 @@ h4 {
 
 p {
   color: rgb(104, 102, 102);
+}
+
+a {
+  transition: all .5s ease-in;
+}
+
+a:hover {
+  opacity: 0.9;
 }
 
 /* NAVIGATION */
@@ -374,8 +382,10 @@ p {
   font-size: 18px;
 }
 
-.periods__contents p {
+.periods__contents p,  
+.periods__contents ul {
   color: whitesmoke;
+  padding-bottom: 1rem;
 }
 
 .periods__contents li {
@@ -445,6 +455,7 @@ p {
   margin-top: auto;
   font-weight: bold;
   text-decoration: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .contact__link p {
@@ -500,12 +511,10 @@ p {
   }
 
   .section {
-    padding: 15% 8%;
+    padding: 0 8%;
     border-top: 1px solid #ddd;
-  }
-
-  #projects {
     height: auto;
+    min-height: 100vh;
   }
 
   .header__title {
@@ -597,6 +606,10 @@ p {
     margin: 0;
   }
 
+  .container__journey {
+    margin: 20% 0;
+  }
+
   .periods__contents {
     min-height: 70vh;
     padding: 10%;
@@ -604,8 +617,8 @@ p {
 
   .period__content--active { 
     grid-template-columns: 1fr;
-    grid-template-rows: 0.4fr 0.6fr;
-    gap: 20px;
+    grid-template-rows: 200px 1fr;
+    font-size: 15px;
     grid-template-areas:
       "period__title"
       "period__text";
@@ -614,7 +627,6 @@ p {
   .container__contact { 
     padding: 0 10%;
     width: 100%;
-    min-height: 60vh;
     text-align: center;
     align-items: center;
     display: flex;
