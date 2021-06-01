@@ -12,7 +12,7 @@ const stickyNav = function (entries) {
 };
 
 const headerObserver = new IntersectionObserver(stickyNav, {
-    threshold: 1
+    threshold: 0.9
 });
 
 headerObserver.observe(header);

@@ -88,6 +88,7 @@ a:hover {
 /* NAVIGATION */
 
 .nav {  
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -131,8 +132,7 @@ a:hover {
 }
 
 .nav__sticky {  
-  position: fixed;
-  padding: 0 15%;
+  padding: 35px 15%;
   background-color: #37383D;
 }
 
@@ -519,10 +519,15 @@ a:hover {
 
   .header__title {
     grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
     grid-template-areas:
       "header__main__text"
       "header__second__text";
   }
+
+.header__second__text { 
+  margin: 0; 
+}
 
   .header__img__text {
     display: none;
@@ -592,6 +597,10 @@ a:hover {
       "project__info";
   }
 
+  .project__title {
+    font-size: 20px;
+  }
+
   .slider__project__btn, .project__text, .project__tech, .project__mini__img__1, .project__mini__img__2, .period__icon, .contact__freecodecamp {
     display: none;
   }
@@ -606,7 +615,7 @@ a:hover {
     margin: 0;
   }
 
-  .container__journey, .slider__project {
+  .container__journey, .slider__project, .container__contact {
     margin: 20% 0;
   }
 
@@ -617,7 +626,7 @@ a:hover {
 
   .period__content--active { 
     grid-template-columns: 1fr;
-    grid-template-rows: 80px 1fr;
+    grid-template-rows: 150px 1fr;
     font-size: 15px;
     grid-template-areas:
       "period__title"
@@ -626,12 +635,14 @@ a:hover {
 
   .container__contact { 
     padding: 0 10%;
-    width: 100%;
-    text-align: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    row-gap: 30px;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "contact__text    contact__text"
+      "contact__btn     contact__btn"
+      "contact__github  contact__linkedin";
   }
 
   .contact__text {
@@ -639,6 +650,12 @@ a:hover {
   }
 
   .contact__link {
-    font-size: 15px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 27px;
   }
 }
