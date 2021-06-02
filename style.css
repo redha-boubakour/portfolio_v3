@@ -1,13 +1,3 @@
-/*  
-
-To do :
-
-Caroussel on the projets section
-The journey section - Resume on scroll
-Media icons : linkedin, github, FCC
-
-*/
-
 /* GLOBAL */
 
 * {
@@ -165,7 +155,7 @@ a:hover {
     margin: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 2fr 1fr;
     gap: 0 50px;
     grid-template-areas:
       "header__main__text       header__img__text"
@@ -174,7 +164,7 @@ a:hover {
   
 .header__main__text { grid-area: header__main__text; }
   
-.header__second__text { grid-area: header__second__text; margin-top: auto; }
+.header__second__text { grid-area: header__second__text;}
   
 .header__img__text { 
   grid-area: header__img__text; 
@@ -315,12 +305,12 @@ a:hover {
   opacity: 0.9;
 }
 
-.project:hover .project__img {
+.project__img:hover {
   filter: blur(8px);
   transition: all 1.5s;
 }
 
-.project:hover .project__description {
+.project__description:hover {
   transition: all 1.5s;
   opacity: 1;
 }
