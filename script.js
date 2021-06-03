@@ -92,8 +92,8 @@ sections.forEach(section => {
 // The Caroussel of the 'projects' section
 
 const projects = document.querySelectorAll('.slide__project');
-const projectBtnLeft = document.querySelector('.slider__project__btn--left');
-const projectBtnRight = document.querySelector('.slider__project__btn--right');
+const projectBtnLeft = document.querySelector('.container__project__btn--left');
+const projectBtnRight = document.querySelector('.container__project__btn--right');
 const maxProject = projects.length;
 let currentProject = 0;
 
@@ -164,6 +164,21 @@ const close = function() {
 
 openMenu.addEventListener('click', show);
 closeMenu.addEventListener('click', close);
+
+// Legal notice
+
+const legalNotice = document.querySelector('.legal__notice');
+const legalNoticeBackground = document.querySelector('.legal__notice--background');
+
+legalNotice.onclick = function () {
+    legalNoticeBackground.style.display = "block";
+};
+
+window.onclick = function (event) {
+  if (event.target == legalNoticeBackground) {
+    legalNoticeBackground.style.display = "none";
+  }
+};
 
 // MEDIA QUERY
 
